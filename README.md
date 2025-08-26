@@ -225,3 +225,4 @@ Representative confusion matrices and feature importance plots for each model ar
 - [ ] Build cause-specific competing risks models (TRM vs. relapse mortality).
 - [ ] External temporal validation split (e.g., stratify by `yeartx` if available).
 - [ ] Try different input features to predict different outputs
+- [ ] Try non-traditional ML methods, such as reinforcement learning
