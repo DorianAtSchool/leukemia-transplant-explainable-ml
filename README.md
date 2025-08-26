@@ -4,7 +4,7 @@
 This project focuses on developing predictive models to analyze and gather novel insights on acute leukemia using the `ds1302` dataset (publicly available). The primary goal is to predict overall survival (OS) and other outcomes based on various patient and donor characteristics in order to better inform medical professionals on Allogeneic hematopoietic cell transplantation (allo-HCT) and treatment process. The dataset contains 28 features and 4946 rows.
 
 ## Data Processing
-- **Initial Dataset**: 4946 rows, 28 features
+- **Initial Dataset**: 4946 rows, 49 features
 - **Cleaned Dataset**: 4653 rows, 20 features
 - **Target Variable**: `dead`
 - **Key Features**: `age`, `sex`, `drabomatch`, `alstatprgp`, `gvhdprgp`
