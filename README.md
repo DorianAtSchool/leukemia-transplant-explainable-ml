@@ -73,70 +73,70 @@ Special / patterned missing or administrative codes encountered:
 - These were hard-excluded (row deletion) in the current pipeline (see Limitations for bias considerations).
 
 Identifiers (excluded from modeling):\
-1. pseudoid – Pseudo Recipient ID (identifier)
-2. pseudoccn – Pseudo Center (identifier)
+1. pseudoid – Pseudo Recipient ID (identifier)\
+2. pseudoccn – Pseudo Center (identifier)\
 
 Main Effect:\
-3. drabomatch – Donor–recipient ABO match:
-   Codes: 0 Matched; 1 Minor mismatch; 2 Major mismatch; 3 Bi-directional
+3. drabomatch – Donor–recipient ABO match:\
+   Codes: 0 Matched; 1 Minor mismatch; 2 Major mismatch; 3 Bi-directional\
 
 Recipient Variables:\
-4. age – Recipient age (continuous, years)
-5. agegp – Recipient age group: 1 18–29; 2 30–39; 3 40–49; 4 50–59; 5 60–69; 6 70+
-6. sex – Recipient sex: 1 Male; 2 Female
-7. racegp – Recipient race: 1 White; 2 Black/African American; 3 Asian; 4 Native Hawaiian / Other Pacific Islander; 5 American Indian / Alaska Native; 6 >1 race; 99 Missing
-8. hctcigp – HCT-CI group: 0 Score 0; 1 Score 1; 2 Score 2; 3 3+; 99 Missing
-9. hctcigp2 – Collapsed HCT-CI: 0 Score 0; 1 Scores 1–2; 2 Score 3+; 99 Missing
-10. karnofcat – Karnofsky/Lansky performance: 1 90–100; 2 <90; 99 Missing
+4. age – Recipient age (continuous, years)\
+5. agegp – Recipient age group: 1 18–29; 2 30–39; 3 40–49; 4 50–59; 5 60–69; 6 70+\
+6. sex – Recipient sex: 1 Male; 2 Female\
+7. racegp – Recipient race: 1 White; 2 Black/African American; 3 Asian; 4 Native Hawaiian / Other Pacific Islander; 5 American Indian / Alaska Native; 6 >1 race; 99 Missing\
+8. hctcigp – HCT-CI group: 0 Score 0; 1 Score 1; 2 Score 2; 3 3+; 99 Missing\
+9. hctcigp2 – Collapsed HCT-CI: 0 Score 0; 1 Scores 1–2; 2 Score 3+; 99 Missing\
+10. karnofcat – Karnofsky/Lansky performance: 1 90–100; 2 <90; 99 Missing\
 
 Disease Variables:\
-11. dis – Primary disease: 1 AML; 2 ALL
-12. alstatprgp – Disease status at HCT: 1 PIF; 2 CR1; 3 CR2; 4 ≥CR3; 5 Relapse; 99 Missing
+11. dis – Primary disease: 1 AML; 2 ALL\
+12. alstatprgp – Disease status at HCT: 1 PIF; 2 CR1; 3 CR2; 4 ≥CR3; 5 Relapse; 99 Missing\
 
 Transplant Variables:\
-13. condtbi – Conditioning intensity & TBI: 1 MAC TBI; 2 MAC non-TBI; 3 RIC/NMA; 99 Missing
-14. gvhdprgp – GVHD prophylaxis (detailed): 0 Post Cy; 1 TAC+MTX±; 2 TAC+MMF±; 3 TAC±; 4 CSA+MMF±; 5 CSA+MTX±; 6 Others
-15. gvhdprgp2 – GVHD prophylaxis (grouped): 1 TAC ± others; 2 CSA ± others; 3 PTCy ± others; 4 Other(s); 99 Missing
-16. atgcampathgp2 – ATG / alemtuzumab use: 1 ATG or Campath; 2 No ATG/Campath; 99 Missing
-17. graftype – Graft type: 1 Bone marrow; 2 Peripheral blood
-18. donorgp – Donor type: 1 HLA-identical sibling; 2 Well-matched unrelated (8/8)
-19. dnrage_urd – Donor age (continuous; unrelated donors only; NA for siblings)
-20. dagegp – Donor age group (unrelated only): -9 NA (sibling); 1 18–29; 2 30–39; 3 40–49; 4 50–59; 5 60–69; 99 Missing
-21. drrh – Donor–recipient Rh factor: 0 +/+; 1 +/-; 2 -/+; 3 -/-; 99 Missing
-22. drcmvpr – Donor–recipient CMV serostatus: 0 +/+; 1 +/-; 2 -/+; 3 -/-; 99.1 Missing donor; 99.2 Missing recipient; 99.3 Recipient not tested/inconclusive
-23. drsex – Donor–recipient sex pairing: 1 M–M; 2 M–F; 3 F–M; 4 F–F
+13. condtbi – Conditioning intensity & TBI: 1 MAC TBI; 2 MAC non-TBI; 3 RIC/NMA; 99 Missing\
+14. gvhdprgp – GVHD prophylaxis (detailed): 0 Post Cy; 1 TAC+MTX±; 2 TAC+MMF±; 3 TAC±; 4 CSA+MMF±; 5 CSA+MTX±; 6 Others\
+15. gvhdprgp2 – GVHD prophylaxis (grouped): 1 TAC ± others; 2 CSA ± others; 3 PTCy ± others; 4 Other(s); 99 Missing\
+16. atgcampathgp2 – ATG / alemtuzumab use: 1 ATG or Campath; 2 No ATG/Campath; 99 Missing\
+17. graftype – Graft type: 1 Bone marrow; 2 Peripheral blood\
+18. donorgp – Donor type: 1 HLA-identical sibling; 2 Well-matched unrelated (8/8)\
+19. dnrage_urd – Donor age (continuous; unrelated donors only; NA for siblings)\
+20. dagegp – Donor age group (unrelated only): -9 NA (sibling); 1 18–29; 2 30–39; 3 40–49; 4 50–59; 5 60–69; 99 Missing\
+21. drrh – Donor–recipient Rh factor: 0 +/+; 1 +/-; 2 -/+; 3 -/-; 99 Missing\
+22. drcmvpr – Donor–recipient CMV serostatus: 0 +/+; 1 +/-; 2 -/+; 3 -/-; 99.1 Missing donor; 99.2 Missing recipient; 99.3 Recipient not tested/inconclusive\
+23. drsex – Donor–recipient sex pairing: 1 M–M; 2 M–F; 3 F–M; 4 F–F\
 
 Graft Manipulation (era / form version dependent):\
-24. rbcreduc13 – RBC depletion (form 2006 v1–3): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
-25. buffycp13 – Buffy coat preparation (form 2006 v1–3): -9.3 NA (only complete if RBC depletion Yes); -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
-26. rbcreduc4 – RBC depletion (form 2006 v4): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
-27. buffycp4 – Buffy coat preparation (form 2006 v4): -9.2 NA; -9.1 NA data not available; 0 No; 1 Yes
-28. plasmarmv – Volume/plasma reduction: -9.1 NA data not available; 0 No; 1 Yes
-29. yeartx – Year of transplant (continuous)
+24. rbcreduc13 – RBC depletion (form 2006 v1–3): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes\
+25. buffycp13 – Buffy coat preparation (form 2006 v1–3): -9.3 NA (only complete if RBC depletion Yes); -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes\
+26. rbcreduc4 – RBC depletion (form 2006 v4): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes\
+27. buffycp4 – Buffy coat preparation (form 2006 v4): -9.2 NA; -9.1 NA data not available; 0 No; 1 Yes\
+28. plasmarmv – Volume/plasma reduction: -9.1 NA data not available; 0 No; 1 Yes\
+29. yeartx – Year of transplant (continuous)\
 
 Outcome / Time-to-Event Variables (not modeled yet unless specified):\
-30. anc – ANC recovery: 0 Censoring; 1 Event; 99 Missing
-31. dwoancrel – Death w/o ANC or relapse within 28d pre-ANC: 0 Censoring; 1 Event; 99 Missing
-32. intxanc – Time to neutrophil engraftment (months)
-33. plt – Platelet recovery: 0 Censoring; 1 Event; 99 Missing
-34. dwoplt – Death without platelet recovery: 0 Censoring; 1 Event; 99 Missing
-35. intxplt – Time to platelet recovery (months)
-36. agvhd24 – Acute GVHD grade II–IV (computed): 0 Censoring; 1 Event; 99 Missing
-37. dwoagvhd24 – Death without grade II–IV aGVHD: 0 Censoring; 1 Event; 99 Missing
-38. intxagvhd24 – Time to grade II–IV aGVHD or censor (months)
-39. agvhd34 – Acute GVHD grade III–IV: 0 Censoring; 1 Event; 99 Missing
-40. dwoagvhd34 – Death without grade III–IV aGVHD: 0 Censoring; 1 Event; 99 Missing
-41. intxagvhd34 – Time to grade III–IV aGVHD or censor (months)
-42. cgvhd – Chronic GVHD: 0 Censoring; 1 Event; 99 Missing
-43. dwocgvhd – Death without chronic GVHD: 0 Censoring; 1 Event; 99 Missing
-44. intxcgvhd – Time to chronic GVHD or censor (months)
-45. dfs – Disease-free survival: 0 Censoring; 1 Event; 99 Missing
-46. trm – Non-relapse mortality: 0 Censoring; 1 Event; 99 Missing
-47. rel – Relapse: 0 Censoring; 1 Event; 99 Missing
-48. intxrel – Time to relapse / death (months)
-49. dead – Overall survival event indicator: 0 Censoring; 1 Death (MODELED ENDPOINT)
-50. intxsurv – Time to last follow-up (months)
-51. pgf – Primary graft failure (ANC recovery by day 28): 0 Censoring; 1 Event; 99 Missing
+30. anc – ANC recovery: 0 Censoring; 1 Event; 99 Missing\
+31. dwoancrel – Death w/o ANC or relapse within 28d pre-ANC: 0 Censoring; 1 Event; 99 Missing\
+32. intxanc – Time to neutrophil engraftment (months)\
+33. plt – Platelet recovery: 0 Censoring; 1 Event; 99 Missing\
+34. dwoplt – Death without platelet recovery: 0 Censoring; 1 Event; 99 Missing\
+35. intxplt – Time to platelet recovery (months)\
+36. agvhd24 – Acute GVHD grade II–IV (computed): 0 Censoring; 1 Event; 99 Missing\
+37. dwoagvhd24 – Death without grade II–IV aGVHD: 0 Censoring; 1 Event; 99 Missing\
+38. intxagvhd24 – Time to grade II–IV aGVHD or censor (months)\
+39. agvhd34 – Acute GVHD grade III–IV: 0 Censoring; 1 Event; 99 Missing\
+40. dwoagvhd34 – Death without grade III–IV aGVHD: 0 Censoring; 1 Event; 99 Missing\
+41. intxagvhd34 – Time to grade III–IV aGVHD or censor (months)\
+42. cgvhd – Chronic GVHD: 0 Censoring; 1 Event; 99 Missing\
+43. dwocgvhd – Death without chronic GVHD: 0 Censoring; 1 Event; 99 Missing\
+44. intxcgvhd – Time to chronic GVHD or censor (months)\
+45. dfs – Disease-free survival: 0 Censoring; 1 Event; 99 Missing\
+46. trm – Non-relapse mortality: 0 Censoring; 1 Event; 99 Missing\
+47. rel – Relapse: 0 Censoring; 1 Event; 99 Missing\
+48. intxrel – Time to relapse / death (months)\
+49. dead – Overall survival event indicator: 0 Censoring; 1 Death (MODELED ENDPOINT)\
+50. intxsurv – Time to last follow-up (months)\
+51. pgf – Primary graft failure (ANC recovery by day 28): 0 Censoring; 1 Event; 99 Missing\
 
 Modeling Status Annotations:
 - Excluded identifiers: pseudoid, pseudoccn.
