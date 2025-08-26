@@ -72,15 +72,15 @@ Special / patterned missing or administrative codes encountered:
 - 99 / 99.x / -9 / -9.x family (context-specific meanings: Missing, Not Applicable, Different form version, Not available, Inconclusive, etc.)
 - These were hard-excluded (row deletion) in the current pipeline (see Limitations for bias considerations).
 
-Identifiers (excluded from modeling):
+Identifiers (excluded from modeling):\
 1. pseudoid – Pseudo Recipient ID (identifier)
 2. pseudoccn – Pseudo Center (identifier)
 
-Main Effect:
+Main Effect:\
 3. drabomatch – Donor–recipient ABO match:
    Codes: 0 Matched; 1 Minor mismatch; 2 Major mismatch; 3 Bi-directional
 
-Recipient Variables:
+Recipient Variables:\
 4. age – Recipient age (continuous, years)
 5. agegp – Recipient age group: 1 18–29; 2 30–39; 3 40–49; 4 50–59; 5 60–69; 6 70+
 6. sex – Recipient sex: 1 Male; 2 Female
@@ -89,11 +89,11 @@ Recipient Variables:
 9. hctcigp2 – Collapsed HCT-CI: 0 Score 0; 1 Scores 1–2; 2 Score 3+; 99 Missing
 10. karnofcat – Karnofsky/Lansky performance: 1 90–100; 2 <90; 99 Missing
 
-Disease Variables:
+Disease Variables:\
 11. dis – Primary disease: 1 AML; 2 ALL
 12. alstatprgp – Disease status at HCT: 1 PIF; 2 CR1; 3 CR2; 4 ≥CR3; 5 Relapse; 99 Missing
 
-Transplant Variables:
+Transplant Variables:\
 13. condtbi – Conditioning intensity & TBI: 1 MAC TBI; 2 MAC non-TBI; 3 RIC/NMA; 99 Missing
 14. gvhdprgp – GVHD prophylaxis (detailed): 0 Post Cy; 1 TAC+MTX±; 2 TAC+MMF±; 3 TAC±; 4 CSA+MMF±; 5 CSA+MTX±; 6 Others
 15. gvhdprgp2 – GVHD prophylaxis (grouped): 1 TAC ± others; 2 CSA ± others; 3 PTCy ± others; 4 Other(s); 99 Missing
@@ -106,7 +106,7 @@ Transplant Variables:
 22. drcmvpr – Donor–recipient CMV serostatus: 0 +/+; 1 +/-; 2 -/+; 3 -/-; 99.1 Missing donor; 99.2 Missing recipient; 99.3 Recipient not tested/inconclusive
 23. drsex – Donor–recipient sex pairing: 1 M–M; 2 M–F; 3 F–M; 4 F–F
 
-Graft Manipulation (era / form version dependent):
+Graft Manipulation (era / form version dependent):\
 24. rbcreduc13 – RBC depletion (form 2006 v1–3): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
 25. buffycp13 – Buffy coat preparation (form 2006 v1–3): -9.3 NA (only complete if RBC depletion Yes); -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
 26. rbcreduc4 – RBC depletion (form 2006 v4): -9.2 NA different version; -9.1 NA data not available; 0 No; 1 Yes
@@ -114,7 +114,7 @@ Graft Manipulation (era / form version dependent):
 28. plasmarmv – Volume/plasma reduction: -9.1 NA data not available; 0 No; 1 Yes
 29. yeartx – Year of transplant (continuous)
 
-Outcome / Time-to-Event Variables (not modeled yet unless specified):
+Outcome / Time-to-Event Variables (not modeled yet unless specified):\
 30. anc – ANC recovery: 0 Censoring; 1 Event; 99 Missing
 31. dwoancrel – Death w/o ANC or relapse within 28d pre-ANC: 0 Censoring; 1 Event; 99 Missing
 32. intxanc – Time to neutrophil engraftment (months)
@@ -143,15 +143,11 @@ Modeling Status Annotations:
 - Outcome variables (30–51) currently unused except `dead`; these support future survival / competing risks modeling.
 - Graft manipulation variables (24–28) and donor age constructs (19–20) excluded due to missingness / restricted applicability but are candidates for engineered feature inclusion.
 
-Notes on Encoding & Redundancy:
-- Paired constructs (age & agegp; hctcigp & hctcigp2; gvhdprgp & gvhdprgp2; dnrage_urd & dagegp) introduce hierarchical granularity—consider variance inflation diagnostics before linear modeling.
-- Nominal regimen / prophylaxis / status variables (alstatprgp, gvhdprgp, gvhdprgp2, racegp, condtbi) should be one-hot encoded to avoid artificial ordinality.
-- Time-to-event variables enable richer survival analysis (recommended next phase).
-
 ## Encoding & Modeling Notes
 - All predictors are numeric-coded categorical or continuous and were used directly without explicit one-hot expansion in the current pipeline (implicit ordinal treatment). Some variables (e.g., `gvhdprgp`, `gvhdprgp2`, `alstatprgp`, `racegp`) are nominal and could benefit from one-hot encoding to avoid imposing artificial ordinality.
 - Certain related variables (e.g., age & agegp; hctcigp & hctcigp2; gvhdprgp & gvhdprgp2) introduce collinearity/redundancy that can dilute individual feature signals in linear models.
 - Removal (instead of imputation) of rows containing patterned missingness codes (99 / 99.x / -9.x) may introduce selection bias if missingness is not random (e.g., center practices or era effects).
+- Time-to-event variables enable richer survival analysis (recommended next phase).
 
 ## Expanded Feature Importance Interpretation (Clinical Lens)
 Cross-model convergence provides higher confidence in clinically meaningful signals:
