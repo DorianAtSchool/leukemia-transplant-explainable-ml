@@ -1,0 +1,9 @@
+pandas
+pyreadstat
+openpyxl
+fastparquet
+scikit-learn
+numpy
+matplotlib
+seaborn
+scipy
