@@ -1,4 +1,4 @@
-# Project Report: Predictive Modeling for Acute Leukemia (AML / ALL) Outcomes
+# Project Report: Predictive Modeling for Acute Leukemia (AML / ALL) Transplant Outcomes
 
 ## Overview
 This project focuses on developing predictive models to analyze and gather novel insights on acute leukemia using the `ds1302` dataset (publicly available). The primary goal is to predict overall survival (OS) and other outcomes based on various patient and donor characteristics in order to better inform medical professionals on Allogeneic hematopoietic cell transplantation (allo-HCT) and treatment process. The dataset contains 28 features and 4946 rows.
@@ -149,6 +149,18 @@ Modeling Status Annotations:
 - Removal (instead of imputation) of rows containing patterned missingness codes (99 / 99.x / -9.x) may introduce selection bias if missingness is not random (e.g., center practices or era effects).
 - Time-to-event variables enable richer survival analysis (recommended next phase).
 
+## Clinical Impact Statement
+This modeling effort, though currently modest in discriminative performance, highlights reproducible early mortality determinants in allogeneic transplantation: chronological age, refractory/relapsed disease at transplant, and prophylactic immunomodulation strategy. The strong gradient boosting emphasis on active disease (alstatprgp) underscores the persistent adverse biology of uncontrolled leukemia at HCT, reinforcing prioritization of achieving deep remission pre-transplant when feasible.
+
+The intermediate yet consistent influence of GVHD prophylaxis patterns suggests potential trade-offs between immune reconstitution and toxicity profiles that warrant stratified outcome analyses (e.g., infection-mediated vs. GVHD-mediated mortality). The recurring (if moderate) ABO match signal suggests residual transfusion or hemolytic complexity effects remain clinically relevant in select subgroups.
+
+For clinicians and investigators, these findings argue for:
+- Intensified pre-HCT disease control strategies in high-risk (PIF / relapse) candidates.
+- Systematic evaluation of prophylaxis regimens beyond GVHD incidence—integrating survival, infection burden, and immune recovery metrics.
+- Prospective collection of richer biologic and immunologic markers (e.g., MRD, donor-specific antibodies, cytokine kinetics) to elevate prognostic precision beyond demographic and categorical regimen data.
+
+Ultimately, integrating survival modeling, enhanced feature engineering, and calibrated individualized risk outputs can evolve this framework into a clinically actionable decision-support system guiding conditioning selection, prophylaxis tailoring, and resource triage.
+
 ## Expanded Feature Importance Interpretation (Clinical Lens)
 Cross-model convergence provides higher confidence in clinically meaningful signals:
 
@@ -165,6 +177,9 @@ Cross-model convergence provides higher confidence in clinically meaningful sign
 - Disproportionate weighting of `alstatprgp` in boosting vs. more distributed importance in forests suggests boosting is capturing sharper interaction boundaries between disease status and other variables (e.g., `age`, `condtbi`).
 - Moderate but persistent signal from donor-recipient ABO matching, despite its reduced emphasis in contemporary practice, invites targeted analysis of transfusion burden or hemolytic complications as mediators.
 - GVHD prophylaxis pattern importance may partly reflect underlying graft source or donor relation not strongly weighted, hinting at latent interaction structures (e.g., Post-Cy + peripheral blood vs. traditional calcineurin inhibitor backbones).
+
+## Visual Assets
+Representative confusion matrices and feature importance plots for each model are stored under `visuals/classification/<model_name>/` (e.g., random_forest, gradient_boosting, svm). These provide qualitative confirmation of moderate class separation and concentrated feature attribution.
 
 ## Limitations
 - Modeling Endpoint: Treated `dead` as a simple binary endpoint; ignores censoring structure inherent in transplant outcomes (time-to-event survival modeling would be more appropriate—Cox PH, Fine-Gray for competing risks, random survival forests).
@@ -192,20 +207,6 @@ Cross-model convergence provides higher confidence in clinically meaningful sign
 11. Detailed Classification: The dataset includes additional outcome metrics, rather than simple survival rate, that could provide more insights
 12. Flip Predictions: use outcome variables for prediction of "ideal" donor or recipient
 
-## Enhanced Clinical Impact Statement
-This modeling effort, though currently modest in discriminative performance, highlights reproducible early mortality determinants in allogeneic transplantation: chronological age, refractory/relapsed disease at transplant, and prophylactic immunomodulation strategy. The strong gradient boosting emphasis on active disease (alstatprgp) underscores the persistent adverse biology of uncontrolled leukemia at HCT, reinforcing prioritization of achieving deep remission pre-transplant when feasible.
-
-The intermediate yet consistent influence of GVHD prophylaxis patterns suggests potential trade-offs between immune reconstitution and toxicity profiles that warrant stratified outcome analyses (e.g., infection-mediated vs. GVHD-mediated mortality). The recurring (if moderate) ABO match signal suggests residual transfusion or hemolytic complexity effects remain clinically relevant in select subgroups.
-
-For clinicians and investigators, these findings argue for:
-- Intensified pre-HCT disease control strategies in high-risk (PIF / relapse) candidates.
-- Systematic evaluation of prophylaxis regimens beyond GVHD incidence—integrating survival, infection burden, and immune recovery metrics.
-- Prospective collection of richer biologic and immunologic markers (e.g., MRD, donor-specific antibodies, cytokine kinetics) to elevate prognostic precision beyond demographic and categorical regimen data.
-
-Ultimately, integrating survival modeling, enhanced feature engineering, and calibrated individualized risk outputs can evolve this framework into a clinically actionable decision-support system guiding conditioning selection, prophylaxis tailoring, and resource triage.
-
-## Visual Assets
-Representative confusion matrices and feature importance plots for each model are stored under `visuals/classification/<model_name>/` (e.g., random_forest, gradient_boosting, svm). These provide qualitative confirmation of moderate class separation and concentrated feature attribution.
 
 ## Reproducibility Notes
 - Hyperparameter tuning via GridSearchCV with 5-fold cross-validation.
