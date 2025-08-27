@@ -58,7 +58,7 @@ Eight classifiers benchmarked using 5-fold CV and GridSearchCV.
 **General outcome:** All models clustered around **AUC 0.56–0.61**, confirming this is a **difficult prediction task** with the given features.  
 
 **Visual Placeholder:**  
-![Model Performance Comparison Placeholder](visuals/model_performance.png)  
+![Model Performance](visuals/classification/svm/svm_confusion_matrix.png)  
 
 ---
 
@@ -70,7 +70,7 @@ Eight classifiers benchmarked using 5-fold CV and GridSearchCV.
 - **Comorbidity/performance scores**: weaker but meaningful contributions.  
 
 **Visual Placeholder:**  
-![Feature Importance Placeholder](visuals/feature_importance.png)  
+![Feature Importance Placeholder](visuals/classification/svm/svm_feat_importance.png)  
 
 ---
 
