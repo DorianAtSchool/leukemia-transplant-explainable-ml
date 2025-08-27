@@ -9,9 +9,10 @@ This project is an initial benchmark effort applying machine learning to outcome
  	uncertain outcomes
 
 #### Motivation
-	- Predicting survival after allo-HCT is difficult because it depends on multiple interacting factors (patient age, remission status, donor 
- 	compatibility, and prophylaxis regimens)
-	- Machine learning can identify which features most strongly influence survival and, in the longer term, guide donor selection and treatment decisions
+	- Predicting survival after allo-HCT is difficult because it depends on multiple interacting factors (patient age, 
+ 	remission status, donor compatibility, and prophylaxis regimens)
+	- Machine learning can identify which features most strongly influence survival and, in the longer term, guide donor 
+ 	selection and treatment decisions
 
 #### Current Stage (this work)
 	- Built baseline classification models predicting overall survival (OS) as a binary endpoint (death vs censored)
