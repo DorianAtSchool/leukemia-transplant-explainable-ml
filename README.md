@@ -1,5 +1,9 @@
 # Project Report: Predictive Modeling for Acute Leukemia (AML / ALL) Transplant Outcomes
 
+📑 **Quick Links**  
+- [👉 Simplified README](./simplified_readme.md)  
+- [📄 Full Paper Report](./acute_leukemia_transplant_ml.pdf)  
+
 ## Overview
 This project is an initial benchmark effort applying machine learning to outcomes of allogeneic hematopoietic cell transplantation (allo-HCT) in patients with acute leukemia. It uses the publicly available ds1302 dataset (~5,000 transplant cases), which enables reproducibility and accessibility for researchers.
 
