@@ -188,7 +188,7 @@ Ultimately, integrating survival modeling, enhanced feature engineering, and cal
 Cross-model convergence provides higher confidence in clinically meaningful signals:
 
 1. Age (continuous & grouped): Strong across virtually all models. Both `age` and `agegp` appearing in importance (Random Forest, SVM permutation) suggests non-linear risk acceleration with advancing age groups beyond simple linear trends.
-2. Disease Status at HCT (alstatprgp): High gradient boosting weight (≈39%) and strong random forest contribution underscores that refractory / relapsed disease at transplant (PIF / Relapse categories) materially elevates early mortality risk.
+2. Disease Status at HCT (alstatprgp): High gradient boosting weight (≈39%) and strong random forest contribution underscores that disease progression at time of transplant elevates early mortality risk.
 3. GVHD Prophylaxis Regimens (gvhdprgp / gvhdprgp2): Moderate, model-dependent signals imply prophylaxis strategy correlates with outcome—potentially reflecting both regimen biology and confounding by indication (e.g., Post-Cy often in haplo or mismatched settings not explicitly encoded here).
 4. ABO Matching (drabomatch): Recurrent mid-level importance indicates that even in modern practice, ABO compatibility may still modestly impact early survival or serve as a surrogate for transfusion complexity.
 5. Performance Status (karnofcat) & Comorbidity (hctcigp): Present but not dominant—may reflect limited variance in performance distribution (majority high) or overlapping risk mediation through age and disease status.
