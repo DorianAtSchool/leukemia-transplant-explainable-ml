@@ -55,6 +55,8 @@ Eight classification models were trained and evaluated using accuracy, precision
 - **Recall**: 0.6015
 - **F1-Score**: 0.5732
 
+![Model Performance](visuals/classification/svm/svm_confusion_matrix.png)
+
 ## Feature Importance Analysis
 ### Logistic Regression
 Top features based on coefficients:
@@ -87,6 +89,10 @@ Top features based on permutation importance:
 3. `sex` (1.37%)
 4. `gvhdprgp` (1.20%)
 5. `dis` (1.18%)
+
+![Model Performance](visuals/classification/gradient_boost/GB_feature_importance.png)
+![Model Performance](visuals/classification/svm/svm_feat_importance.png)
+
 
 ## Data Dictionary Integration & Variable Definitions
 The following is a comprehensive, ordered reconstruction of the source data dictionary (all variables, in original sequence). Target used in current modeling: `dead` (1 = Event/death, 0 = Censoring). Variables not yet modeled or intentionally excluded are annotated.
@@ -194,6 +200,8 @@ Cross-model convergence provides higher confidence in clinically meaningful sign
 5. Performance Status (karnofcat) & Comorbidity (hctcigp): Present but not dominant—may reflect limited variance in performance distribution (majority high) or overlapping risk mediation through age and disease status.
 6. CMV Pairing (drcmvpr) & Rh Factor (drrh): Appear sporadically; weak to modest signals could surface more strongly in time-to-event or infection-specific endpoints rather than binary all-cause early mortality.
 7. Graft Source (graftype) & Donor Type (donorgp): Lesser relative importance here; potential confounding by prophylaxis regimen choices or patient selection not fully disentangled.
+
+![Model Performance](visuals/classification/random_forest/forest_feature_importance.png)
 
 ## Novel Insights Derived from Cross-Model Synthesis
 - Dual Representation of Age (continuous + grouped) ranking in SVM and tree ensembles implies risk is not strictly linear—supporting exploration of spline-based or piecewise hazard models.
