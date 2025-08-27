@@ -67,7 +67,8 @@ Eight classifiers benchmarked using 5-fold CV and GridSearchCV.
 - **GVHD prophylaxis regimens**: prevention strategies affect survival trade-offs.  
 - **ABO donor–recipient match**: modest but reproducible effect.  
 - **Comorbidity/performance scores**: weaker but meaningful contributions.  
- 
+
+![Feature Importance Placeholder](visuals/classification/random_forest/forest_feature_importance.png)  
 ![Feature Importance Placeholder](visuals/classification/svm/svm_feat_importance.png)  
 
 ---
