@@ -1,7 +1,25 @@
 # Project Report: Predictive Modeling for Acute Leukemia (AML / ALL) Transplant Outcomes
 
 ## Overview
-This project focuses on developing predictive models to analyze and gather novel insights on acute leukemia using the `ds1302` dataset (publicly available). The primary goal is to predict overall survival (OS) and other outcomes based on various patient and donor characteristics in order to better inform medical professionals on Allogeneic hematopoietic cell transplantation (allo-HCT) and treatment process. The dataset contains 28 features and 4946 rows.
+This project is an initial benchmark effort applying machine learning to outcomes of allogeneic hematopoietic cell transplantation (allo-HCT) in patients with acute leukemia. It uses the publicly available ds1302 dataset (~5,000 transplant cases), which enables reproducibility and accessibility for researchers.
+
+Context
+	•	Leukemia (AML/ALL) is a blood cancer that disrupts production of normal blood cells.
+	•	Stem cell transplant (allo-HCT) is one of the few potentially curative options, but carries high risks and uncertain outcomes.
+
+Motivation
+	•	Predicting survival after allo-HCT is difficult because it depends on multiple interacting factors (patient age, remission status, donor compatibility, and prophylaxis regimens).
+	•	Machine learning can identify which features most strongly influence survival and, in the longer term, guide donor selection and treatment decisions.
+
+Current Stage (this work)
+	•	Built baseline classification models predicting overall survival (OS) as a binary endpoint (death vs censored).
+	•	Benchmarked eight classifiers with feature importance analyses.
+	•	Documented challenges in applying ML to clinical tabular data: structured missingness, censoring, redundancy/collinearity, and modest discrimination.
+
+Long-Term Goal
+	•	Expand from binary classification to time-to-event survival and competing-risks modeling.
+	•	Use richer features (e.g., immunological and genomic markers).
+	•	Ultimately “flip the task”: recommend the optimal donor for a given patient, creating a decision-support system for individualized transplant planning.
 
 ## Data Processing
 - **Initial Dataset**: 4946 rows, 49 features
