@@ -53,11 +53,11 @@ Eight classifiers benchmarked using 5-fold CV and GridSearchCV.
 **Best model: SVM**  
 - Accuracy: **0.6015**  
 - AUC: **~0.616**  
-- Precision/Recall/F1: ~0.57–0.60  
+- Precision/Recall/F1: ~0.57–0.60
+  
+![Model Performance](visuals/classification/svm/svm_confusion_matrix.png)
 
 **General outcome:** All models clustered around **AUC 0.56–0.61**, confirming this is a **difficult prediction task** with the given features.  
-
-![Model Performance](visuals/classification/svm/svm_confusion_matrix.png)  
 
 ---
 
