@@ -19,7 +19,7 @@ Current Stage (this work)
 Long-Term Goal
 	- Expand from binary classification to time-to-event survival and competing-risks modeling
 	- Use richer features (e.g., immunological and genomic markers)
-	- Ultimately “flip the task”: recommend the optimal donor for a given patient, creating a decision-support system for individualized transplant planning
+	- Ultimately “flip the task”: recommend the optimal donor for a given patient using the outcome as features, creating a decision-support system for individualized transplant planning
 
 ## Data Processing
 - **Initial Dataset**: 4946 rows, 49 features
