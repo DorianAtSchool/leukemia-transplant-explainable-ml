@@ -172,12 +172,6 @@ Modeling Status Annotations:
 - Outcome variables (30–51) currently unused except `dead`; these support future survival / competing risks modeling.
 - Graft manipulation variables (24–28) and donor age constructs (19–20) excluded due to missingness / restricted applicability but are candidates for engineered feature inclusion.
 
-## Encoding & Modeling Notes
-- All predictors are numeric-coded categorical or continuous and were used directly without explicit one-hot expansion in the current pipeline (implicit ordinal treatment). Some variables (e.g., `gvhdprgp`, `gvhdprgp2`, `alstatprgp`, `racegp`) are nominal and could benefit from one-hot encoding to avoid imposing artificial ordinality.
-- Certain related variables (e.g., age & agegp; hctcigp & hctcigp2; gvhdprgp & gvhdprgp2) introduce collinearity/redundancy that can dilute individual feature signals in linear models.
-- Removal (instead of imputation) of rows containing patterned missingness codes (99 / 99.x / -9.x) may introduce selection bias if missingness is not random (e.g., center practices or era effects).
-- Time-to-event variables enable richer survival analysis (recommended next phase).
-
 ## Clinical Impact Statement
 This modeling effort, though currently modest in discriminative performance, highlights reproducible early mortality determinants in allogeneic transplantation: chronological age, refractory/relapsed disease at transplant, and prophylactic immunomodulation strategy. The strong gradient boosting emphasis on active disease (alstatprgp) underscores the persistent adverse biology of uncontrolled leukemia at HCT, reinforcing prioritization of achieving deep remission pre-transplant when feasible.
 
@@ -208,6 +202,12 @@ Cross-model convergence provides higher confidence in clinically meaningful sign
 - Disproportionate weighting of `alstatprgp` in boosting vs. more distributed importance in forests suggests boosting is capturing sharper interaction boundaries between disease status and other variables (e.g., `age`, `condtbi`).
 - Moderate but persistent signal from donor-recipient ABO matching, despite its reduced emphasis in contemporary practice, invites targeted analysis of transfusion burden or hemolytic complications as mediators.
 - GVHD prophylaxis pattern importance may partly reflect underlying graft source or donor relation not strongly weighted, hinting at latent interaction structures (e.g., Post-Cy + peripheral blood vs. traditional calcineurin inhibitor backbones).
+
+## Encoding & Modeling Notes
+- All predictors are numeric-coded categorical or continuous and were used directly without explicit one-hot expansion in the current pipeline (implicit ordinal treatment). Some variables (e.g., `gvhdprgp`, `gvhdprgp2`, `alstatprgp`, `racegp`) are nominal and could benefit from one-hot encoding to avoid imposing artificial ordinality.
+- Certain related variables (e.g., age & agegp; hctcigp & hctcigp2; gvhdprgp & gvhdprgp2) introduce collinearity/redundancy that can dilute individual feature signals in linear models.
+- Removal (instead of imputation) of rows containing patterned missingness codes (99 / 99.x / -9.x) may introduce selection bias if missingness is not random (e.g., center practices or era effects).
+- Time-to-event variables enable richer survival analysis (recommended next phase).
 
 ## Visual Assets
 Representative confusion matrices and feature importance plots for each model are stored under `visuals/classification/<model_name>/` (e.g., random_forest, gradient_boosting, svm). These provide qualitative confirmation of moderate class separation and concentrated feature attribution.
