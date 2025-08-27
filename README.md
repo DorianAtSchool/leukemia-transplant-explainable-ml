@@ -95,7 +95,6 @@ Top features based on permutation importance:
 
 
 ## Data Dictionary Integration & Variable Definitions
-The following is a comprehensive, ordered reconstruction of the source data dictionary (all variables, in original sequence). Target used in current modeling: `dead` (1 = Event/death, 0 = Censoring). Variables not yet modeled or intentionally excluded are annotated.
 
 Special / patterned missing or administrative codes encountered:
 - 99 / 99.x / -9 / -9.x family (context-specific meanings: Missing, Not Applicable, Different form version, Not available, Inconclusive, etc.)
