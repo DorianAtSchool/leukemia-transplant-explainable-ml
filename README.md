@@ -173,7 +173,7 @@ Modeling Status Annotations:
 - Graft manipulation variables (24–28) and donor age constructs (19–20) excluded due to missingness / restricted applicability but are candidates for engineered feature inclusion.
 
 ## Clinical Impact Statement
-This modeling effort, though currently modest in discriminative performance, highlights reproducible early mortality determinants in allogeneic transplantation: chronological age, refractory/relapsed disease at transplant, and prophylactic immunomodulation strategy. The strong gradient boosting emphasis on active disease (alstatprgp) underscores the persistent adverse biology of uncontrolled leukemia at HCT, reinforcing prioritization of achieving deep remission pre-transplant when feasible.
+This modeling effort, though currently modest in discriminative performance, highlights reproducible early mortality determinants in allogeneic transplantation: chronological age, disease satus at transplant, and prophylactic immunomodulation strategy. The strong gradient boosting emphasis on active disease (alstatprgp) underscores the persistent adverse biology of uncontrolled leukemia at HCT, reinforcing prioritization of achieving deep remission pre-transplant when feasible.
 
 The intermediate yet consistent influence of GVHD prophylaxis patterns suggests potential trade-offs between immune reconstitution and toxicity profiles that warrant stratified outcome analyses (e.g., infection-mediated vs. GVHD-mediated mortality). The recurring (if moderate) ABO match signal suggests residual transfusion or hemolytic complexity effects remain clinically relevant in select subgroups.
 
